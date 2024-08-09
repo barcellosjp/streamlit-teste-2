@@ -3,6 +3,8 @@ import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 import streamlit as st
 
+# Configuração do Streamlit Secrets
+secrets = st.secrets["gcp"]
 
 # ID da planilha pública
 id_planilha = '1UvAo5LKW2bZf7tKoxoG-BNXwee6KUIf7Iq70u9zpvjI'
