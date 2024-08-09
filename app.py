@@ -1,6 +1,7 @@
 import streamlit as st
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import pandas as pd
 
 # Configuração do Streamlit Secrets
 secrets = st.secrets["gcp"]
@@ -17,6 +18,9 @@ sheet = client.open_by_url(spreadsheet_url).sheet1
 # Lendo os dados da planilha
 data = sheet.get_all_records()
 
-# Exibindo os dados no Streamlit
+# Convertendo os dados para um DataFrame
+df = pd.DataFrame(data)
+
+# Exibindo o DataFrame no Streamlit
 st.title('Dashboard do Google Sheets')
-st.write(data)
+st.write(df)
