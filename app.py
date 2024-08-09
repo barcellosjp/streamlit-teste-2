@@ -12,7 +12,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_dict(secrets, scope)
 client = gspread.authorize(creds)
 
 # Acessando a planilha
-spreadsheet_url = "https://docs.google.com/spreadsheets/d/1UvAo5LKW2bZf7tKoxoG-BNXwee6KUIf7Iq70u9zpvjI/export?format=csv"
+spreadsheet_url = "https://docs.google.com/spreadsheets/d/1TmNwXyHLChMKoDMmjdWGGyOAT4jfPq85s8Q8aWMaY3c/export?format=csv"
 sheet = client.open_by_url(spreadsheet_url).sheet1
 
 # Lendo os dados da planilha
